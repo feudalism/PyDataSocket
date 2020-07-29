@@ -1,5 +1,5 @@
 from threading import Event, Thread, Lock
-from socket import socket, AF_INET, SOCK_STREAM, IPPROTO_TCP, TCP_NODELAY, SOL_SOCKET, SO_REUSEADDR
+from socket import socket, AF_INET, SOCK_STREAM, IPPROTO_TCP, TCP_NODELAY, SOL_SOCKET, SO_REUSEADDR, error
 import time
 from io import BytesIO
 import numpy as np
@@ -105,7 +105,7 @@ class TCPSendSocket(object):
         try:
             self.connection.send(struct.pack('I', size))
             self.connection.sendall(f)  # Send data
-        except OSError as e:
+        except error as e:
             if self.verbose:
                 print(e)
             self.socket.close()
