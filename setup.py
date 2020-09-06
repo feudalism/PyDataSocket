@@ -15,9 +15,9 @@ setup(
     url="https://github.com/psomers3/PyDataSocket.git",
     packages=['DataSocket'],
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2",
         "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
     ],
-    python_requires='>=3',
+    python_requires='>=2',
 )
